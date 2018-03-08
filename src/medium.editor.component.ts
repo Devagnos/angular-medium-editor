@@ -56,8 +56,17 @@ export class MediumEditorComponent {
 
     editorInit( config ) {
       this.editor = new MediumEditor(this.host.nativeElement, config);
+	    
+      // check for insert plugin
+      if (this.config.insertPlugin) {
+            jQuery(this.host.nativeElement).mediumInsert(
+                Object.assign(this.config.insertPlugin, {
+                    editor: this.editor
+                })
+            );
+        }
 
-	    // Change event
+      // Change event
       const editable = this.editor.elements[0];
       this.editor.subscribe('editableInput', (event, editable) => {
         const value = this.editor.elements[0].innerHTML;
