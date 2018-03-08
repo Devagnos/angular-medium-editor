@@ -5,6 +5,14 @@ import * as MediumEditor from 'medium-editor';
 import { jQuery } from 'jquery';
 
 // Imports
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 /**
  * Usage :
  * <medium-editor ngModel name="content" class="editable" #content="ngModel" [config]="getConfig()"></medium-editor>
@@ -52,9 +60,7 @@ var MediumEditorComponent = (function () {
         this.editor = new MediumEditor(this.host.nativeElement, config);
         // check for insert plugin
         if (this.config.insertPlugin) {
-            jQuery(this.host.nativeElement).mediumInsert(Object.assign(this.config.insertPlugin, {
-                editor: this.editor
-            }));
+            jQuery(this.host.nativeElement).mediumInsert(__assign({}, this.config.insertPlugin, { editor: this.editor }));
         }
         // Change event
         var /** @type {?} */ editable = this.editor.elements[0];

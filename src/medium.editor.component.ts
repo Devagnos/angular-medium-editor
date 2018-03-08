@@ -61,9 +61,10 @@ export class MediumEditorComponent {
       // check for insert plugin
       if (this.config.insertPlugin) {
             jQuery(this.host.nativeElement).mediumInsert(
-                Object.assign(this.config.insertPlugin, {
+                {
+                    ...this.config.insertPlugin,
                     editor: this.editor
-                })
+                }
             );
         }
 
