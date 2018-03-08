@@ -1,8 +1,10 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@angular/forms'), require('medium-editor'), require('jquery')) :
 	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/common', '@angular/forms', 'medium-editor', 'jquery'], factory) :
-	(factory((global['angular-medium-editor'] = {}),global.core,global.common,global.forms,global.MediumEditor,global.jquery));
-}(this, (function (exports,core,common,forms,MediumEditor,jquery) { 'use strict';
+	(factory((global['angular-medium-editor'] = {}),global.core,global.common,global.forms,global.MediumEditor,global.$));
+}(this, (function (exports,core,common,forms,MediumEditor,$) { 'use strict';
+
+$ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
 // Imports
 var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
@@ -60,7 +62,7 @@ var MediumEditorComponent = (function () {
         this.editor = new MediumEditor(this.host.nativeElement, config);
         // check for insert plugin
         if (config.insertPlugin)
-            jquery.jQuery(this.host.nativeElement).mediumInsert(__assign({}, config.insertPlugin, { editor: this.editor }));
+            $(this.host.nativeElement).mediumInsert(__assign({}, config.insertPlugin, { editor: this.editor }));
         // Change event
         var /** @type {?} */ editable = this.editor.elements[0];
         this.editor.subscribe('editableInput', function (event, editable) {

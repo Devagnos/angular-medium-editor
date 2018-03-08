@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, Input, NgModule, Output, ViewChild
 import { CommonModule } from '@angular/common';
 import { NgControl } from '@angular/forms';
 import * as MediumEditor from 'medium-editor';
-import { jQuery } from 'jquery';
+import $ from 'jquery';
 
 // Imports
 var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
@@ -60,7 +60,7 @@ var MediumEditorComponent = (function () {
         this.editor = new MediumEditor(this.host.nativeElement, config);
         // check for insert plugin
         if (config.insertPlugin)
-            jQuery(this.host.nativeElement).mediumInsert(__assign({}, config.insertPlugin, { editor: this.editor }));
+            $(this.host.nativeElement).mediumInsert(__assign({}, config.insertPlugin, { editor: this.editor }));
         // Change event
         var /** @type {?} */ editable = this.editor.elements[0];
         this.editor.subscribe('editableInput', function (event, editable) {
