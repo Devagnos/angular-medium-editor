@@ -10,7 +10,7 @@ import {
 import { NgControl } from '@angular/forms';
 
 import * as MediumEditor from 'medium-editor';
-import $ from 'jquery';
+import jQuery from 'jquery';
 
 /**
  * Usage :
@@ -60,7 +60,7 @@ export class MediumEditorComponent {
 	    
       // check for insert plugin
       if (config.insertPlugin)
-            $(this.host.nativeElement).mediumInsert(
+            jQuery(this.host.nativeElement).mediumInsert(
                 {
                     ...config.insertPlugin,
                     editor: this.editor
