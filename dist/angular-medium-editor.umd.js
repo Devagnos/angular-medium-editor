@@ -59,8 +59,8 @@ var MediumEditorComponent = (function () {
         var _this = this;
         this.editor = new MediumEditor(this.host.nativeElement, config);
         // check for insert plugin
-        if (this.config.insertPlugin) {
-            jquery.jQuery(this.host.nativeElement).mediumInsert(__assign({}, this.config.insertPlugin, { editor: this.editor }));
+        if (config.insertPlugin) {
+            jquery.jQuery(this.host.nativeElement).mediumInsert(__assign({}, config.insertPlugin, { editor: this.editor }));
         }
         // Change event
         var /** @type {?} */ editable = this.editor.elements[0];
