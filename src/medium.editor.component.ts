@@ -59,14 +59,13 @@ export class MediumEditorComponent {
       this.editor = new MediumEditor(this.host.nativeElement, config);
 	    
       // check for insert plugin
-      if (config.insertPlugin) {
+      if (config.insertPlugin)
             jQuery(this.host.nativeElement).mediumInsert(
                 {
                     ...config.insertPlugin,
                     editor: this.editor
                 }
             );
-        }
 
       // Change event
       const editable = this.editor.elements[0];
