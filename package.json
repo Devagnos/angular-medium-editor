@@ -69,6 +69,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
+    "jquery": "^3.3.1",
     "medium-editor": "^5.23.0"
   }
 }

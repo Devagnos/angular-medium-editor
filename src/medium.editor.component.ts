@@ -10,6 +10,7 @@ import {
 import { NgControl } from '@angular/forms';
 
 import * as MediumEditor from 'medium-editor';
+import { jQuery } from "jquery";
 
 /**
  * Usage :
